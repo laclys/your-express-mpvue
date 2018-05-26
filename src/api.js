@@ -1,6 +1,6 @@
 // API
 
-const dailyEnglishUrl = 'http://open.iciba.com/dsapi/'
+const dailyEnglishUrl = 'https://open.iciba.com/dsapi/'
 
 const api = {
   dailyEnglishUrl

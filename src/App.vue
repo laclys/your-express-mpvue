@@ -10,6 +10,7 @@ export default {
     //   }
     // })
     const res = await get(api.dailyEnglishUrl)
+    console.log(res)
     console.log('started!')
   }
 }
