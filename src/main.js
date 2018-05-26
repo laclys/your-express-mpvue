@@ -15,6 +15,23 @@ export default {
       navigationBarBackgroundColor: '#1e9cd6',
       navigationBarTitleText: '快递到哪儿咯',
       navigationBarTextStyle: 'light'
+    },
+    tabBar: {
+      selectedColor: 'black',
+      list: [
+        {
+          pagePath: 'pages/express/main',
+          text: '查询',
+          iconPath: 'static/img/todo.png',
+          selectedIconPath: 'static/img/todo-active.png'
+        },
+        {
+          pagePath: 'pages/me/main',
+          text: '我的',
+          iconPath: 'static/img/me.png',
+          selectedIconPath: 'static/img/me-active.png'
+        }
+      ]
     }
   }
 }
