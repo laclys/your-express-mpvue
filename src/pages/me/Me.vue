@@ -4,6 +4,7 @@
       <img :src="userinfo.avatarUrl" alt="">
       <p>{{userinfo.nickName}}</p>
     </div>
+    <YearProgress />
     <button
       v-show="!isLogin"
       open-type="getUserInfo"
@@ -17,7 +18,11 @@
 </template>
 
 <script>
+import YearProgress from '@/components/YearProgress'
 export default {
+  components: {
+    YearProgress
+  },
   data() {
     return {
       isLogin: false,
