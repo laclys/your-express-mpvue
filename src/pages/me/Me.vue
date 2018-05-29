@@ -4,7 +4,8 @@
       <img :src="userinfo.avatarUrl" alt="">
       <p>{{userinfo.nickName}}</p>
     </div>
-    <YearProgress />
+    <year-progress />
+    <daily-english />
     <button
       v-show="!isLogin"
       open-type="getUserInfo"
@@ -19,9 +20,11 @@
 
 <script>
 import YearProgress from '@/components/YearProgress'
+import DailyEnglish from '@/components/DailyEnglish'
 export default {
   components: {
-    YearProgress
+    YearProgress,
+    DailyEnglish
   },
   data() {
     return {

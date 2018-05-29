@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'YearProgress',
   methods: {
     // 判断是不是闰年
     isLeapYear () {
