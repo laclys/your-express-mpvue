@@ -9,7 +9,7 @@ app.$mount()
 export default {
   // app.json
   config: {
-    pages: ['^pages/me/main'],
+    pages: ['^pages/express/main'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#1e9cd6',
