@@ -1,25 +1,34 @@
 <template>
-  <div class="dailyContain">
-    <p class="englishContent">The meaning of life is not simply to exist, to survive, but to move ahead, to go up, to achieve, to conquer.</p>
-    <p class="chineseContent">生命的意义不仅在于简单的存在与活着，而是去前行、进步、获取和征服</p>
-    <p class="dateContent">{{computedData}}</p>
+  <div class="dailyContain" v-show="!!englishContent">
+    <p class="englishContent">{{englishContent}}</p>
+    <p class="chineseContent">{{translation}}</p>
+    <p class="dateContent">{{computedDate}}</p>
   </div>
 </template>
 
 <script>
+import api from '../api.js'
+import { get } from '../util.js'
 import constants from '../constant.js'
 export default {
-  created() {
-    console.log(constants.MONTH)
+  async mounted() {
+    const res = await get(api.dailyEnglishUrl)
+    this.englishContent = res.content
+    this.translation = res.note
+    this.date = res.dateline
   },
   data() {
     return {
-      data: '2018-1-29'
+      englishContent: '',
+      translation: '',
+      date: ''
     }
   },
   computed: {
-    computedData() {
-      return constants.MONTH[Number(this.data.split('-')[1]) - 1] + '.' + this.data.split('-')[2]
+    /* 格式化日期 xxx-xx-xx -> xx(英语简写).xx */
+    computedDate() {
+      if (this.date==='') return ''
+      return constants.MONTH[Number(this.date.split('-')[1]) - 1] + '.' + this.date.split('-')[2]
     }
   }
 }
