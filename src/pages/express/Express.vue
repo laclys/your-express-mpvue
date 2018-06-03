@@ -14,6 +14,7 @@
       type="number"
       v-model="nu"
     />
+    <!-- <a class="btn sreach-btn" href="/pages/content/main">Sreach</a> -->
     <button class="btn sreach-btn" @click="handleSreach" >Sreach</button>
     <img class="screach-icon" src="../../../static/img/sreach.png" alt="">
   </div>
@@ -59,8 +60,11 @@ export default {
       this.index = e.target.value
     },
     handleSreach () {
-      console.log('快递单号',this.nu)
-      console.log('快递公司代号',this.companyList[this.index].code)
+      console.log('快递单号', this.nu)
+      console.log('快递公司代号', this.companyList[this.index].code)
+      wx.navigateTo({
+      url: `/pages/content/main?company=${this.companyList[this.index].code}&code=${this.nu}`
+})
     }
   }
 }
