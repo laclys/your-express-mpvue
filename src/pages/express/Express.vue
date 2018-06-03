@@ -28,12 +28,12 @@ export default {
       index: 0,
       companyList: [
         {
-          name: '顺丰',
-          code: 'shunfeng'
-        },
-        {
           name: '百世',
           code: 'huitongkuaidi'
+        },
+        {
+          name: '顺丰',
+          code: 'shunfeng'
         },
         {
           name: '中通',
