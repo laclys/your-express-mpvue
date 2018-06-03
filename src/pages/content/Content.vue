@@ -1,12 +1,12 @@
 <template>
-  <scroll-view scroll-y style="height: 800px;" class="container">
+  <scroll-view scroll-y style="height: 1000px;" class="container">
     <section v-if="hasResult">
         <div v-if="result.success">
           <p>物流公司: {{result.company}}</p>
           <p>运单号: {{result.nu}}</p>
           <p>result:</p>
           <div v-for="(item, index) in result.data" :key="index">
-            <div>{{item.tiem}}</div>
+            <div>{{item.time}}</div>
             <div>{{item.context}}</div>
           </div>
         </div>
