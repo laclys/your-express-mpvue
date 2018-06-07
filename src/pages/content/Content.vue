@@ -24,12 +24,14 @@
 import api from '../../api.js'
 import { get } from '../../util.js'
 export default {
+  name: 'content',
   data() {
     return {
       hasResult: false,
       result: null,
       company: '',
-      code: ''
+      code: '',
+      pickerIndex: 0
     }
   },
   created () {
@@ -39,6 +41,7 @@ export default {
     console.log('onLoad')
     console.log(options)
     this.company = options.company
+    this.pickerIndex = options.index
     this.code = options.code
   },
   async mounted () {
@@ -48,6 +51,24 @@ export default {
     console.log(res)
     this.hasResult = true
     this.result = res
+    if (this.result.success) {
+      this.storeNm()
+    }
+  },
+  methods: {
+    /*存储查询成功的订单号*/
+    storeNm() {
+      console.log(this.pickerIndex)
+      let dataObj = {
+        index: this.pickerIndex ? this.pickerIndex : 0,
+        nu: this.result.nu ? this.result.nu : ''
+      }
+      console.log(dataObj)
+      wx.setStorage({
+        key:"order",
+        data: dataObj
+      })
+    }
   }
 }
 </script>

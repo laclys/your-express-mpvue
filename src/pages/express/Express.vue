@@ -14,7 +14,6 @@
       type="number"
       v-model="nu"
     />
-    <!-- <a class="btn sreach-btn" href="/pages/content/main">Sreach</a> -->
     <button class="btn sreach-btn" @click="handleSreach" >Sreach</button>
     <img class="screach-icon" src="../../../static/img/sreach.png" alt="">
   </div>
@@ -63,9 +62,21 @@ export default {
       console.log('快递单号', this.nu)
       console.log('快递公司代号', this.companyList[this.index].code)
       wx.navigateTo({
-      url: `/pages/content/main?company=${this.companyList[this.index].code}&code=${this.nu}`
-})
+        url: `/pages/content/main?index=${this.index}&company=${this.companyList[this.index].code}&code=${this.nu}`
+      })
     }
+  },
+  mounted () {
+    let self = this
+    wx.getStorage({
+      key: 'order',
+      success: function(res) {
+          console.log(res.data)
+          console.log(res.data.index)
+          self.nu = res.data.nu
+          self.index = res.data.index
+      } 
+    })
   }
 }
 </script>
