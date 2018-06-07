@@ -10,7 +10,7 @@
     <p class="title">单号查起来~:</p>
     <input
       class="input"
-      focus="true"
+      placeholder="这里输入运单号哦~"
       type="number"
       v-model="nu"
     />
@@ -79,15 +79,28 @@ export default {
       color: #1e9cd6;
     }
     .title{
-      margin-bottom: 30rpx;
+      vertical-align:middle;
+      display: inline-block;
+      width: 230rpx;
+      height: 36rpx;
+      line-height: 36rpx;
       font-size: 36rpx;
       color: #1e9cd6;
+      // background: red;
     }
     .input{
-      padding: 15rpx;
+      vertical-align:middle;
+      display: inline-block;
+      width: 360rpx;
+      height: 36rpx;
+      padding-top: 5rpx;
+      padding-bottom: 5rpx;
+      padding-left: 10rpx;
+      
       border: 1rpx solid #1e9cd6;
       border-radius: 10rpx;
-      color: #1e9cd6
+      font-size: 32rpx;
+      color: #1e9cd6;
     }
     .sreach-btn{
       margin-top: 80rpx;
