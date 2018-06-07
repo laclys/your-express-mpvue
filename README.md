@@ -1,6 +1,20 @@
 # your-express-mpvue
 
-> A Mpvue project
+> A Mpvue project (快递到哪儿咯)
+
+## pics
+![](./demoPic/pic01.jpg)
+
+![](./demoPic/pic02.jpg)
+
+![](./demoPic/pic03.jpg)
+
+## Api
+
+快递： https://github.com/jokermonn/-Api/blob/master/ExpressDelivery.md
+
+每日一句： https://open.iciba.com/dsapi/
+
 
 ## Build Setup
 
@@ -14,8 +28,14 @@ npm run dev
 # build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+todolist
+- 查询历史记录
+- Make Beautiful
+- 加引导
+- icommon font
+
+
+
+Just for fun!
