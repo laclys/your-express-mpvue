@@ -28,16 +28,16 @@ export default {
       index: 0,
       companyList: [
         {
+          name: '中通',
+          code: 'zhongtong'
+        },
+        {
           name: '百世',
           code: 'huitongkuaidi'
         },
         {
           name: '顺丰',
           code: 'shunfeng'
-        },
-        {
-          name: '中通',
-          code: 'zhongtong'
         },
         {
           name: '韵达',
@@ -96,7 +96,7 @@ export default {
       padding-top: 5rpx;
       padding-bottom: 5rpx;
       padding-left: 10rpx;
-      
+
       border: 1rpx solid #1e9cd6;
       border-radius: 10rpx;
       font-size: 32rpx;

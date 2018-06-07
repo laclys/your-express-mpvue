@@ -2,20 +2,20 @@
   <scroll-view scroll-y style="height: 1000px;" class="container">
     <section v-if="hasResult">
         <div v-if="result.success">
-          <p>物流公司: {{result.company}}</p>
-          <p>运单号: {{result.nu}}</p>
-          <p>result:</p>
-          <div v-for="(item, index) in result.data" :key="index">
-            <div>{{item.time}}</div>
-            <div>{{item.context}}</div>
+          <p class="companyName">物流公司: {{result.company}}</p>
+          <p class="nm">运单号: {{result.nu}}</p>
+          <p class="result">查询结果~:</p>
+          <div class="result-content" v-for="(item, index) in result.data" :key="index">
+            <div class="timeline">{{item.time}}</div>
+            <div class="localline">{{item.context}}</div>
           </div>
         </div>
         <div v-else>
           出错啦~
         </div>
     </section>
-    <section v-else>
-      查询ing~
+    <section class="finding" v-else>
+      努力查询ing~
     </section>
   </scroll-view>
 </template>
@@ -53,5 +53,36 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .container {
+    padding-top: 60rpx;
+    .finding{
+      margin-top: 300rpx;
+      text-align: center;
+      font-size: 40rpx;
+      color: #1e9cd6;
+    }
+    .companyName, .nm, .result {
+      font-size: 40rpx;
+      color: #1e9cd6;
+    }
+    .result {
+      margin-bottom: 20rpx;
+    }
+    .result-content {
+      padding-left: 30rpx;
+      padding-right: 30rpx;
+      .timeline {
+        padding-top: 15rpx;
+        padding-bottom: 10rpx;
+        line-height: 30rpx;
+        font-size: 30rpx;
+        color: rgb(109, 108, 108);
+      }
+      .localline {
+        line-height: 50rpx;
+        font-size: 30rpx;
+        color: #1e9cd6;
+      }
+    }
+  }
 </style>
