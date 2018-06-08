@@ -1,8 +1,8 @@
 <template>
   <scroll-view scroll-y style="height: 1000px;" class="container">
     <section v-if="hasResult">
-        <div v-if="result.success">
-          <p class="companyName">物流公司: {{result.company}}</p>
+        <div v-if="result.message === 'ok'">
+          <p class="companyName">物流公司: {{companyName}}</p>
           <p class="nm">运单号: {{result.nu}}</p>
           <p class="result">查询结果~:</p>
           <div class="result-content" v-for="(item, index) in result.data" :key="index">
@@ -23,6 +23,7 @@
 <script>
 import api from '../../api.js'
 import { get } from '../../util.js'
+import constant from '../../constant.js'
 export default {
   name: 'content',
   data() {
@@ -46,12 +47,13 @@ export default {
   },
   async mounted () {
     console.log('mounted')
-    let url = api.expresshUrl.replace('codeNum', this.code).replace('companyName', this.company)
+    // let url = api.expresshUrl.replace('codeNum', this.code).replace('companyName', this.company)
+    let url = api.express100Url.replace('codeNum', this.code).replace('companyName', this.company)
     let res = await get(url)
     console.log(res)
     this.hasResult = true
     this.result = res
-    if (this.result.success) {
+    if (!this.result.state) {
       this.storeNm()
     }
   },
@@ -68,6 +70,11 @@ export default {
         key:"order",
         data: dataObj
       })
+    }
+  },
+  computed: {
+    companyName() {
+      return constant.companyList[this.pickerIndex].name
     }
   }
 }

@@ -20,37 +20,13 @@
 </template>
 
 <script>
+import constant from '../../constant.js'
 export default {
   data() {
     return {
       nu: '',
       index: 0,
-      companyList: [
-        {
-          name: '中通',
-          code: 'zhongtong'
-        },
-        {
-          name: '百世',
-          code: 'huitongkuaidi'
-        },
-        {
-          name: '顺丰',
-          code: 'shunfeng'
-        },
-        {
-          name: '韵达',
-          code: 'yunda'
-        },
-        {
-          name: '申通',
-          code: 'shentong'
-        },
-        {
-          name: '京东',
-          code: 'jd'
-        },
-      ]
+      companyList: constant.companyList
     }
   },
   methods: {
