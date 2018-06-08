@@ -11,7 +11,7 @@
 
 ## Api
 
-快递： https://github.com/jokermonn/-Api/blob/master/ExpressDelivery.md
+快递： https://github.com/broven/KuaiDi100API
 
 每日一句： https://open.iciba.com/dsapi/
 
