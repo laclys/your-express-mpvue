@@ -34,8 +34,8 @@ todolist
 - 查询历史记录
 - Make Beautiful
 - 加引导
-- icommon font
-
+- icommon font √
+- 添加扫码/复制剪贴板 √
 
 
 Just for fun!
