@@ -14,6 +14,8 @@
       type="number"
       v-model="nu"
     />
+    <i class="iconfont icon-file-copy express-icon" @click="handleCopy" />
+    <i class="iconfont icon-scan express-icon" @click="handleScan" />
     <button class="btn sreach-btn" @click="handleSreach" >Sreach</button>
     <img class="screach-icon" src="../../../static/img/sreach.png" alt="">
   </div>
@@ -40,6 +42,12 @@ export default {
       wx.navigateTo({
         url: `/pages/content/main?index=${this.index}&company=${this.companyList[this.index].code}&code=${this.nu}`
       })
+    },
+    handleCopy () {
+      console.log('COPY')
+    },
+    handleScan () {
+      console.log('SCAN')
     }
   },
   mounted () {
@@ -78,7 +86,7 @@ export default {
     .input{
       vertical-align:middle;
       display: inline-block;
-      width: 360rpx;
+      width: 380rpx;
       height: 36rpx;
       padding-top: 5rpx;
       padding-bottom: 5rpx;
@@ -88,6 +96,13 @@ export default {
       border-radius: 10rpx;
       font-size: 32rpx;
       color: #1e9cd6;
+    }
+    .express-icon {
+      position: relative;
+      right: 75rpx;
+      display: inline;
+      color: #1e9cd6;
+      z-index: 9;
     }
     .sreach-btn{
       margin-top: 80rpx;
