@@ -63,6 +63,14 @@ export default {
     },
     handleScan () {
       console.log('SCAN')
+      wx.scanCode({
+        success: (res) => {
+          console.log(res.result)
+          if (res.result) {
+            this.nu = res.result
+          }
+        }
+      })
     }
   },
   mounted () {
