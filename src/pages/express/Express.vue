@@ -45,6 +45,21 @@ export default {
     },
     handleCopy () {
       console.log('COPY')
+      let data = this.nu
+      wx.setClipboardData({
+      data,
+      success: function(res) {
+        wx.getClipboardData({
+          success: function(res) {
+            console.log(res.data)
+            wx.showToast({
+              title: '剪贴板复制成功',
+              icon: 'success'
+            })
+          }
+        })
+      }
+    })
     },
     handleScan () {
       console.log('SCAN')
