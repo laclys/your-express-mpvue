@@ -15,7 +15,7 @@
         </div>
     </section>
     <section class="finding" v-else>
-      努力查询ing~
+      努力查询ing<dot>...</dot>
     </section>
   </scroll-view>
 </template>
@@ -112,5 +112,23 @@ export default {
         color: #1e9cd6;
       }
     }
+  }
+  dot {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    text-align: left;
+    vertical-align: -.25em;
+    overflow: hidden;
+    &::before {
+      display: block;
+      content: '...\A..\A.';
+      white-space: pre-wrap;
+      animation: dot 3s infinite step-start both;
+    }
+  }
+  @keyframes dot {
+    33% { transform: translateY(-2em); }
+    66% { transform: translateY(-1em); }
   }
 </style>
