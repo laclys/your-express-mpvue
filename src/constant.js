@@ -24,6 +24,22 @@ const constants = {
     {
       name: '京东',
       code: 'jd'
+    },
+    {
+      name: '安鲜达',
+      code: 'exfresh'
+    },
+    {
+      name: '苏宁',
+      code: 'suning'
+    },
+    {
+      name: '天天',
+      code: 'tiantian'
+    },
+    {
+      name: '邮政国内',
+      code: 'youzhengguonei'
     }
   ]
 }
