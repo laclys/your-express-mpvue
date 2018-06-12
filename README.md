@@ -1,5 +1,7 @@
 # your-express-mpvue
 
+0.0.1
+
 > A Mpvue project (快递到哪儿咯)
 
 ## pics
@@ -39,3 +41,6 @@ todolist
 
 
 Just for fun!
+
+
+![](./demoPic/codePic.jpg)
